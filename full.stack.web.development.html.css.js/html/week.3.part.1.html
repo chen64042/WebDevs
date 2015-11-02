@@ -1,0 +1,61 @@
+<html>
+	<head>
+		<title>Matching Game</title>
+		<style>
+			img {
+				position: absolute;
+			}
+		
+			div#leftPanel {
+				top: 10px;
+				border-right: 1px solid black;
+			}
+			
+			div#rightPanel {
+				border-left: 1px solid black;
+			}
+			
+			div {
+				height: 700px;
+				left: 0px;
+				float: left;
+			}
+			
+			@media only screen and (min-width: 1200px) {
+				div {
+					width: 600px;
+				}
+			}
+			
+			@media only screen and (min-width: 1000px) and (max-width: 1199px){
+				div {
+					width: 500px;
+				}
+			}
+			
+			@media only screen and (min-width: 800px) and (max-width: 999px){
+				div {
+					width: 400px;
+				}
+			}
+			
+			@media only screen and (min-width: 600px) and (max-width: 799px) {
+				div {
+					width: 300px;
+				}
+			}
+			
+			@media only screen and (min-width: 400px) and (max-width: 599px) {
+				div {
+					width: 200px;
+				}
+			}									
+		</style>
+	</head>
+	<body>
+		<h2>Matching Game</h2>
+		<p>Click on the extra smiling face on the left</p>
+		<div id="leftPanel"></div>
+		<div id="rightPanel"></div>
+	</body>
+</html>
