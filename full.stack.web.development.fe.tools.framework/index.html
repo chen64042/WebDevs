@@ -115,6 +115,97 @@
 		</div>
 	</div>
 
+	<div id="reserveModal" class="modal fade" role="dialog">
+		<div class="modal-dialog">
+			<!-- Modal content-->
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
+					<h4 class="modal-title">Reserve Table</h4>
+				</div>
+				<div class="modal-body">
+					<form class="form-horizontal role="form">
+						<div class="form-group">
+							<div class="col-xs-12 col-sm-2">
+								<h5 align="right">Number of Guests:</h5>
+							</div>
+							<div class="col-xs-12 col-sm-9">
+								<label class="radio-inline" for="one"> <input
+									type="radio" name="guestCount" id="one" value="1"> 1
+								</label> <label class="radio-inline" for="two"> <input
+									type="radio" name="guestCount" id="two" value="2"> 2
+								</label> <label class="radio-inline" for="three"> <input
+									type="radio" name="guestCount" id="three" value="3">3
+								</label> <label class="radio-inline" for="four"> <input
+									type="radio" name="guestCount" id="four" value="4"> 4
+								</label> <label class="radio-inline" for="five"> <input
+									type="radio" name="guestCount" id="five" value="5"> 5
+								</label> <label class="radio-inline" for="six"> <input
+									type="radio" name="guestCount" id="six" value="6"> 6
+								</label>
+							</div>
+						</div>
+						<div class="form-group">
+							<div class="col-xs-12 col-sm-2">
+								<h5 align="right">Section:</h5>
+							</div>
+							<div class="col-xs-12 col-sm-9 btn-group" data-toggle="buttons">
+								<label class="btn btn-success active"> <input
+									type="radio" autocomplete="off" checked id="nonsmoking">
+									Non-smoking
+								</label> <label class="btn btn-danger"> <input type="radio"
+									autocomplete="off" id="smoking">&nbsp;&nbsp;Smoking&nbsp;&nbsp;
+								</label>
+							</div>
+						</div>
+						<div class="form-group has-feedback">
+							<div class="col-xs-12 col-sm-2">
+								<h5 align="right">Date and Time:</h5>
+							</div>
+							<div class="col-xs-12 col-sm-4">
+								<input class="form-control" id="reservedate" type="date"
+									placeholder="Date"><span
+									class="glyphicon glyphicon-calendar form-control-feedback"
+									aria-hidden="true"></span>
+							</div>
+							<div class="col-xs-12 col-sm-4">
+								<input class="form-control" id="reservetime" type="time"
+									placeholder="Time"><span
+									class="glyphicon glyphicon-time form-control-feedback"
+									aria-hidden="true"></span>
+							</div>
+						</div>
+						<div class="form-group">
+							<div class="col-sm-2">
+								<button class="btn btn-primary btn-sm btn-block">Reserve</button>
+							</div>
+							<div class="col-sm-2">
+								<button type="button" class="btn btn-default btn-sm btn-block"
+									data-dismiss="modal">Cancel</button>
+							</div>
+							<div class="col-sm-8">
+								<p style="padding: 10px;"></p>
+							</div>
+						</div>
+						<div class="form-group">
+							<div
+								class="col-sm-10 alert alert-warning alert-dismissible"
+								role="alert">
+								<button type="button" class="close" data-dismiss="alert"
+									aria-label="Close">
+									<span aria-hidden="true">&times;</span>
+								</button>
+								<strong>Warning:</strong>: Please <a href="tel:+85212345678"
+									class="alert-link"> call</a> us to reserve for more than six
+								guests.
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+
 	<header class="jumbotron">
 
 		<!-- Main component for a primary marketing message or call to action -->
@@ -300,97 +391,6 @@
 			</div>
 		</div>
 	</div>
-	<div id="reserveModal" class="modal fade" role="dialog">
-		<div class="modal-dialog">
-			<!-- Modal content-->
-			<div class="modal-content">
-				<div class="modal-header">
-					<button type="button" class="close" data-dismiss="modal">&times;</button>
-					<h4 class="modal-title">Reserve Table</h4>
-				</div>
-				<div class="modal-body">
-					<form class="form-horizontal role="form">
-						<div class="form-group">
-							<div class="col-xs-12 col-sm-2">
-								<h5 align="right">Number of Guests:</h5>
-							</div>
-							<div class="col-xs-12 col-sm-9">
-								<label class="radio-inline" for="one"> <input
-									type="radio" name="guestCount" id="one" value="1"> 1
-								</label> <label class="radio-inline" for="two"> <input
-									type="radio" name="guestCount" id="two" value="2"> 2
-								</label> <label class="radio-inline" for="three"> <input
-									type="radio" name="guestCount" id="three" value="3">3
-								</label> <label class="radio-inline" for="four"> <input
-									type="radio" name="guestCount" id="four" value="4"> 4
-								</label> <label class="radio-inline" for="five"> <input
-									type="radio" name="guestCount" id="five" value="5"> 5
-								</label> <label class="radio-inline" for="six"> <input
-									type="radio" name="guestCount" id="six" value="6"> 6
-								</label>
-							</div>
-						</div>
-						<div class="form-group">
-							<div class="col-xs-12 col-sm-2">
-								<h5 align="right">Section:</h5>
-							</div>
-							<div class="col-xs-12 col-sm-9 btn-group" data-toggle="buttons">
-								<label class="btn btn-success active"> <input
-									type="radio" autocomplete="off" checked id="nonsmoking">
-									Non-smoking
-								</label> <label class="btn btn-danger"> <input type="radio"
-									autocomplete="off" id="smoking">&nbsp;&nbsp;Smoking&nbsp;&nbsp;
-								</label>
-							</div>
-						</div>
-						<div class="form-group has-feedback">
-							<div class="col-xs-12 col-sm-2">
-								<h5 align="right">Date and Time:</h5>
-							</div>
-							<div class="col-xs-12 col-sm-4">
-								<input class="form-control" id="reservedate" type="date"
-									placeholder="Date"><span
-									class="glyphicon glyphicon-calendar form-control-feedback"
-									aria-hidden="true"></span>
-							</div>
-							<div class="col-xs-12 col-sm-4">
-								<input class="form-control" id="reservetime" type="time"
-									placeholder="Time"><span
-									class="glyphicon glyphicon-time form-control-feedback"
-									aria-hidden="true"></span>
-							</div>
-						</div>
-						<div class="form-group">
-							<div class="col-sm-2">
-								<button class="btn btn-primary btn-sm btn-block">Reserve</button>
-							</div>
-							<div class="col-sm-2">
-								<button type="button" class="btn btn-default btn-sm btn-block"
-									data-dismiss="modal">Cancel</button>
-							</div>
-							<div class="col-sm-8">
-								<p style="padding: 10px;"></p>
-							</div>
-						</div>
-						<div class="form-group">
-							<div
-								class="col-sm-10 alert alert-warning alert-dismissible"
-								role="alert">
-								<button type="button" class="close" data-dismiss="alert"
-									aria-label="Close">
-									<span aria-hidden="true">&times;</span>
-								</button>
-								<strong>Warning:</strong>: Please <a href="tel:+85212345678"
-									class="alert-link"> call</a> us to reserve for more than six
-								guests.
-							</div>
-						</div>
-					</form>
-				</div>
-			</div>
-		</div>
-	</div>
-
 
 	<footer>
 		<div class="container">
