@@ -188,8 +188,7 @@
 							</div>
 						</div>
 						<div class="form-group">
-							<div
-								class="col-sm-10 alert alert-warning alert-dismissible"
+							<div class="col-sm-10 alert alert-warning alert-dismissible"
 								role="alert">
 								<button type="button" class="close" data-dismiss="alert"
 									aria-label="Close">
@@ -304,6 +303,16 @@
 						class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
 						<span class="sr-only">Next</span>
 					</a>
+					<div class="btn-group" id="carouselButtons" data-toggle="buttons">
+						<label class="btn btn-success btn-xs" id="carousel-pause">
+							<input type="radio" autocomplete="off">
+							<span class="glyphicon glyphicon-pause" aria-hidden="true"></span>
+						</label>
+						<label class="btn btn-danger btn-xs active" id="carousel-play">
+							<input type="radio" autocomplete="off" checked>
+							<span class="glyphicon glyphicon-play" aria-hidden="true"></span>
+						</label>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -445,6 +454,22 @@
 	<script>
 		$(document).ready(function() {
 			$('[data-toggle="tooltip"]').tooltip();
+		});
+
+		$(document).ready(function() {
+			$("#mycarousel").carousel({
+				interval : 2000
+			});
+			$("#carousel-pause").click(function() {
+				$("#mycarousel").carousel('pause');
+				$("#carousel-pause").toggleClass("btn-success btn-danger")
+				$("#carousel-play").toggleClass("btn-success btn-danger")
+			});
+			$("#carousel-play").click(function() {
+				$("#mycarousel").carousel('cycle');
+				$("#carousel-pause").toggleClass("btn-success btn-danger")
+				$("#carousel-play").toggleClass("btn-success btn-danger")
+			});
 		});
 	</script>
 </body>
