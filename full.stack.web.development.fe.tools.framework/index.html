@@ -72,15 +72,15 @@
 							Contact</a></li>
 				</ul>
 				<ul class="nav navbar-nav navbar-right">
-					<li><a data-toggle="modal" data-target="#loginModal"> <span
-							class="glyphicon glyphicon-log-in"></span> Login
-					</a></li>
+					<li><a id="loginButton"><span
+							class="glyphicon glyphicon-log-in"></span> Login </a>
+					</li>
 				</ul>
 			</div>
 		</div>
 	</nav>
-	<div id="loginModal" class="modal fade" role="dialog">
-		<div class="modal-dialog">
+	<div id="loginModal" class="modal fade" role="dialog" aria-describedby="login dialog">
+		<div class="modal-dialog" role="dialog">
 			<!-- Modal content-->
 			<div class="modal-content">
 				<div class="modal-header">
@@ -101,7 +101,7 @@
 						</div>
 						<div class="checkbox">
 							<h4>
-								<label class="label label-default" for="rememberme"> <input
+								<label class="label label-default label-sm" for="rememberme"> <input
 									type="checkbox" id="rememberme"> Remember me
 								</label>
 							</h4>
@@ -225,7 +225,7 @@
 				<div class="col-xs-12 col-sm-2">
 					<p style="padding: 40px;"></p>
 					<a type="button" class="btn btn-warning btn-block"
-						data-toggle="modal" data-target="#reserveModal"> Reserve Table
+						id="reserveButton"> Reserve Table
 					</a>
 				</div>
 			</div>
@@ -303,15 +303,11 @@
 						class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
 						<span class="sr-only">Next</span>
 					</a>
-					<div class="btn-group" id="carouselButtons" data-toggle="buttons">
-						<label class="btn btn-success btn-xs" id="carousel-pause">
-							<input type="radio" autocomplete="off">
-							<span class="glyphicon glyphicon-pause" aria-hidden="true"></span>
-						</label>
-						<label class="btn btn-danger btn-xs active" id="carousel-play">
-							<input type="radio" autocomplete="off" checked>
-							<span class="glyphicon glyphicon-play" aria-hidden="true"></span>
-						</label>
+					<div class="btn-group" id="carouselButton" data-toggle="buttons">
+						<button class="btn btn-success btn-xs" id="carousel-control">
+								<span class="glyphicon glyphicon-pause" aria-hidden="true" id="glyph">
+							</span>
+						</button>
 					</div>
 				</div>
 			</div>
@@ -454,21 +450,32 @@
 	<script>
 		$(document).ready(function() {
 			$('[data-toggle="tooltip"]').tooltip();
-		});
 
-		$(document).ready(function() {
+			$("#loginButton").click(function () {
+				$("#loginModal").modal('toggle');
+			});
+
+			$("#reserveButton").click(function () {
+				$("#reserveModal").modal('toggle');
+			});
+
 			$("#mycarousel").carousel({
 				interval : 2000
 			});
-			$("#carousel-pause").click(function() {
-				$("#mycarousel").carousel('pause');
-				$("#carousel-pause").toggleClass("btn-success btn-danger")
-				$("#carousel-play").toggleClass("btn-success btn-danger")
-			});
-			$("#carousel-play").click(function() {
-				$("#mycarousel").carousel('cycle');
-				$("#carousel-pause").toggleClass("btn-success btn-danger")
-				$("#carousel-play").toggleClass("btn-success btn-danger")
+
+			var play = true;
+
+			$("#carousel-control").click(function() {
+				if (play) {
+					$("#mycarousel").carousel('pause');
+				} else {
+					$("#mycarousel").carousel('cycle');
+				}
+				
+				play = !play;
+
+				$("#carousel-control").toggleClass("btn-success btn-danger")
+				$("#glyph").toggleClass("glyphicon-pause glyphicon-play")
 			});
 		});
 	</script>

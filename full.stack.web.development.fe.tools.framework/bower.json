@@ -1,0 +1,26 @@
+{
+  "name": "full.stack.web.development.fe.tools.framework",
+  "homepage": "https://github.com/chen64042/WebDevs/tree/master/full.stack.web.development.fe.tools.framework",
+  "authors": [
+    "chen64042 <chen64042@gmail.com>"
+  ],
+  "description": "conFusion Restaurant",
+  "main": "index.html",
+  "moduleType": [],
+  "keywords": [
+    "restaurant",
+    "bookstrap.js"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.3.5",
+    "font-awesome": "~4.4.0"
+  }
+}
